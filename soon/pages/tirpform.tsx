@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FormEvent } from 'react'
+import DateRangeComp from './components/DateRangeComp.jsx'
 import styles from '../styles/Home.module.css'
 
 export default function PageWithJSbasedForm() {
@@ -43,12 +44,10 @@ export default function PageWithJSbasedForm() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="trip">Name your trip</label>
         <input type="text" id="first" name="first" required />
-        <label htmlFor="place">Where are you going</label>
+        <label htmlFor="place">Where are you going?</label>
         <input type="text" id="last" name="last" required />
-        <label htmlFor="start">Start date:</label>
-        <input type="date" id='start' name='trip-start'
-               value="2022-07-22"
-               min='2022-01-01' max='2023-01-01'/>
+        <label htmlFor='dates'>When are you leaving?</label>
+        <DateRangeComp />
         <button type="submit">Submit</button>
       </form>
     </div>
